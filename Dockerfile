@@ -1,4 +1,4 @@
-FROM node:24-alpine AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ RUN npm run build
 
 FROM nginx:alpine AS production
 
-LABEL org.opencontainers.image.authors="guerzon@proton.me"
+LABEL org.opencontainers.image.authors="volunteers@bettergov.ph,root@guerzon.net"
 LABEL org.opencontainers.image.url="https://bettergov.ph"
 LABEL org.opencontainers.image.source="https://github.com/bettergovph/bettergov"
 
